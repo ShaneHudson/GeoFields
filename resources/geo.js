@@ -1,8 +1,9 @@
-if (navigator.geolocation)  {
+var geoEl = $('.js-geolocation');
+if (navigator.geolocation && geoEl.val() === '')  {
 		var success = function(position)  {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
-			$('.js-geolocation').val(latitude + "," + longitude);
+			geoEl.val(latitude + "," + longitude);
 		};
 
 		var error = function()  {
